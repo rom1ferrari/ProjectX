@@ -1,16 +1,50 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.Insets?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.layout.VBox?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
 
-<?import javafx.scene.control.Button?>
-<VBox alignment="CENTER" spacing="20.0" xmlns:fx="http://javafx.com/fxml"
-      fx:controller="com.example.projectx.HelloController">
+<VBox alignment="CENTER" prefHeight="356.0" prefWidth="1104.0" spacing="20.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.projectx.HelloController">
     <padding>
-        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0"/>
+        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
     </padding>
 
-    <Label fx:id="welcomeText"/>
-    <Button text="Hello!" onAction="#onHelloButtonClick"/>
+    <Label fx:id="welcomeText" prefHeight="18.0" prefWidth="102.0" text="Affichage texte" />
+   <Button fx:id="Testbutton" mnemonicParsing="false" onAction="#onTestButtonClick" text="Bouton" />
+    <Button fx:id="welcometext" onAction="#onHelloButtonClick" text="Hello!" />
+   <Accordion>
+     <panes>
+       <TitledPane animated="false" text="Title 1">
+         <content>
+           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                  <children>
+                     <RadioButton fx:id="ButtonRed" layoutX="33.0" layoutY="14.0" mnemonicParsing="false" onAction="#SetRedLabel" text="Rouge">
+                        <toggleGroup>
+                           <ToggleGroup fx:id="color" />
+                        </toggleGroup>
+                     </RadioButton>
+                     <RadioButton fx:id="ButtonBlue" layoutX="236.0" layoutY="14.0" mnemonicParsing="false" onAction="#SetBlueLabel" text="Bleu" toggleGroup="$color" />
+                     <RadioButton fx:id="ButtonYellow" layoutX="440.0" layoutY="14.0" mnemonicParsing="false" onAction="#SetYellowLabel" text="Jaune" toggleGroup="$color" />
+                     <Label fx:id="LabelTitle1" alignment="CENTER" layoutX="147.0" layoutY="58.0" prefHeight="26.0" prefWidth="242.0" text="I can set the text color via the RadioButtons" textAlignment="CENTER" />
+                  </children>
+               </AnchorPane>
+         </content>
+       </TitledPane>
+       <TitledPane animated="false" text="Title 2">
+         <content>
+           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                  <children>
+                     <Button fx:id="ButtonImage" layoutX="29.0" layoutY="14.0" mnemonicParsing="false" onAction="#ImageButton" prefHeight="26.0" prefWidth="137.0" text="Afficher Image" />
+                     <ImageView fx:id="img" fitHeight="108.0" fitWidth="163.0" layoutX="258.0" layoutY="11.0" pickOnBounds="true" preserveRatio="true" />
+                  </children></AnchorPane>
+         </content>
+       </TitledPane>
+       <TitledPane animated="false" text="Title 3">
+         <content>
+           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+         </content>
+       </TitledPane>
+     </panes>
+   </Accordion>
 </VBox>
